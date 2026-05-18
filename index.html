@@ -34,6 +34,7 @@
     width: 100%;
     text-align: center;
     padding: 10px;
+  
     font-size: 12px;
     font-weight: bold;
     z-index: 1000;
@@ -58,6 +59,7 @@
             align-items: center;
         }
 
+        /* Sidebar Purple Bar (Like the image) */
         .sidebar-accent {
             position: absolute;
             left: 0;
@@ -84,6 +86,7 @@
             font-size: 18px;
         }
 
+        /* Main Content Area */
         .quiz-content {
             margin-left: 60px;
             padding: 40px;
@@ -155,36 +158,6 @@
         .wrong .option-letter { background: var(--wrong-red) !important; }
         .wrong .option-text { border-color: var(--wrong-red); background: #fef2f2; }
 
-        /* Navigation Buttons */
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 40px;
-            max-width: 600px;
-            margin-left: auto;
-        }
-
-        .nav-btn {
-            background: var(--primary-purple);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            font-size: 16px;
-            transition: opacity 0.3s;
-        }
-
-        .nav-btn:hover {
-            opacity: 0.9;
-        }
-
-        .nav-btn:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-        }
-
         /* Progress Bar */
         .progress-container {
             height: 6px;
@@ -202,6 +175,7 @@
             transition: width 0.3s;
         }
 
+        /* Topic Buttons */
         .topic-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -250,17 +224,20 @@
     <div id="topicPage">
         <h1 class="main-title">Copa Mock Test</h1>
         <div class="topic-grid">
-            <!-- Mock test buttons are here as per original source -->
-            <button class="topic-btn" onclick="loadQuiz('m1')">1 Mock test</button>
+ <button class="topic-btn" onclick="loadQuiz('m1')">1 Mock test </button>
             <button class="topic-btn" onclick="loadQuiz('m2')">2 Mock test</button>
+           
             <button class="topic-btn" onclick="loadQuiz('m3')">3 Mock test</button>
-            <button class="topic-btn" onclick="loadQuiz('m4')">4 Mock test</button>
-            <button class="topic-btn" onclick="loadQuiz('m5')">5 Mock test</button>
-            <button class="topic-btn" onclick="loadQuiz('m6')">6 Mock test</button>
-            <button class="topic-btn" onclick="loadQuiz('m7')">7 Mock test</button>
-            <button class="topic-btn" onclick="loadQuiz('m8')">8 Mock test</button>
-            <button class="topic-btn" onclick="loadQuiz('m9')">9 Mock test</button>
-            <button class="topic-btn" onclick="loadQuiz('m10')">10 Mock test</button>
+<button class="topic-btn" onclick="loadQuiz('m4')">4 Mock test</button>
+
+
+<button class="topic-btn" onclick="loadQuiz('m5')">5 Mock test</button>
+
+<button class="topic-btn" onclick="loadQuiz('m6')">6 Mock test</button>
+            <button class="topic-btn" onclick="loadQuiz('m7')"> 7Mock test</button>
+            <button class="topic-btn" onclick="loadQuiz('m8')"> 8Mock test</button>
+            <button class="topic-btn" onclick="loadQuiz('m9')"> 9Mock test</button>
+          <button class="topic-btn" onclick="loadQuiz('m10')">10 Mock test</button>
 <button class="topic-btn" onclick="loadQuiz('m11')">11 Mock test</button>
 <button class="topic-btn" onclick="loadQuiz('m12')">12 Mock test</button>
 <button class="topic-btn" onclick="loadQuiz('m13')">13 Mock test</button>
@@ -271,26 +248,19 @@
 <button class="topic-btn" onclick="loadQuiz('m18')">18 Mock test</button>
 <button class="topic-btn" onclick="loadQuiz('m19')">19 Mock test</button>
 <button class="topic-btn" onclick="loadQuiz('m20')">20 Mock test</button>
-
-            <!-- Add other buttons if needed -->
-        </div>
+</div>
     </div>
 
     <div id="quizPage" style="display:none;">
         <div class="top-header">
-            <h2 id="quizTitle" style="margin:9px; color: #555;">Quiz</h2>
+            <h2 id="quizTitle" style="margin:0; color: #555;">Quiz</h2>
             <button class="home-btn" onclick="goHome()">Home</button>
         </div>
 
         <div class="quiz-content">
-            <div id="questionBox"></div>
+            <div id="questionBox">
+                </div>
             
-            <!-- Navigation Buttons Added -->
-            <div class="nav-container" id="navControls">
-                <button class="nav-btn" id="prevBtn" onclick="prevQuestion()">Previous</button>
-                <button class="nav-btn" id="nextBtn" onclick="nextQuestion()">Next</button>
-            </div>
-
             <div id="resultArea" style="text-align:center; display:none;">
                 <h1 id="finalScore"></h1>
                 <button class="topic-btn" onclick="goHome()">Try Another Topic</button>
@@ -300,13 +270,16 @@
         <div class="progress-container">
             <div class="progress-bar" id="progressBar"></div>
         </div>
-    </div>
+    
+
 </div>
         
 <script>
-// Quiz data is loaded here (m1, m2... as per original source)
-// ... [Mera mashwara hai ki aap apne purane quizzes data ko yahan rakhein] ...
-// Example data structure retained:
+
+//////////////////////////
+//// QUIZ DATA
+//////////////////////////
+
 const quizzes={
 
 m2:[
@@ -391,7 +364,7 @@ m2:[
 
 {q:"40. Which character represents the parent directory in Linux? / Linux માં કયું પાત્ર પિતૃ નિર્દેશિકા (Parent Directory) દર્શાવે છે?",o:["/ (Slash)","~ (Tilde)",". . (Dot Dot)",". (Single Dot)"],a:2},
 
-{q:"41.{q:"Which HTML tag creates a checkbox in a form? / HTML ફોર્મમાં ચેકબોક્સ બનાવવા માટે કયો ટેગ વપરાય છે?",o:["<checkbox>","<check>","<option>","<input type='checkbox'>"],a:3},
+{q:"41. Which HTML tag creates a checkbox in a form? / HTML ફોર્મમાં ચેકબોક્સ બનાવવા માટે કયો ટેગ વપરાય છે?",o:["","","",""],a:3},
 
 {q:"42. Which is the arm lift back pressure method? / આમ લિફ્ટ બેક પ્રેશર પદ્ધતિ કઈ છે?",o:["Nielsen's Method","Shafer's Method","Sylvester's Method","CPR"],a:0},
 
@@ -566,7 +539,7 @@ m3:[
 
 {q:"23. What is the purpose of the Quick Access Toolbar? / ક્વીક એક્સસેસ ટૂલબારનો હેતુ શું છે?",o:["To hold familiar and repeated functions","To search files","To change settings","To exit application"],a:0},
 
-{q:"24. {q:"Correct HTML code to insert an image in the background: / બેકગ્રાઉન્ડમાં ઈમેજ ઇન્સર્ટ કરવા માટે સાચો HTML કોડ કયો છે?",o:["<img background='image.jpg'>","<body img='image.jpg'>","<background src='image.jpg'>","<body background='image.jpg'>"],a:3},
+{q:"24. Correct HTML code to insert an image in the background: / બેકગ્રાઉન્ડમાં ઈમેજ ઇન્સર્ટ કરવા માટે સાચો HTML કોડ કયો છે?",o:["","","",""],a:3},
 
 {q:"25. On which application is the main advent of Power BI based? / પાવરબીઆઈ (Power BI) નું મુખ્ય આગમન કઈ અરજી પર આધારિત છે?",o:["MS Access","MS Excel","MS SQL","MySQL"],a:1},
 
@@ -596,7 +569,7 @@ m3:[
 
 {q:"38. Why should a query execute successfully on an existing view? / પ્રવર્તમાન દ્રશ્ય પર શા માટે ક્વેરી સફળતાપૂર્વક એક્ઝીક્યુટ થવી જોઈએ?",o:["Select privilege on the view","Insert privilege","Delete privilege","Admin privilege"],a:0},
 
-{q:"39.{q:"Link to allow visitors to send email from a page: / મુલાકાતીઓને ઈમેલ મોકલવાની મંજૂરી આપવા કઈ લિંક વપરાય છે?",o:["<a href='mailto:test@example.com'>","<mail>","<email>","<a href='email'>"],a:0},
+{q:"39. Link to allow visitors to send email from a page: / મુલાકાતીઓને ઈમેલ મોકલવાની મંજૂરી આપવા કઈ લિંક વપરાય છે?",o:["","","",""],a:0},
 
 {q:"40. Data communication system spread across countries or the world: / કઈ ડેટા કમ્યુનિકેશન સિસ્ટમ દેશો અથવા સમગ્ર વિશ્વમાં ફેલાયેલી છે?",o:["LAN","WAN","PAN","MAN"],a:1},
 
@@ -618,7 +591,7 @@ m3:[
 
 {q:"49. What is the full form of CPU? / CPU નું પૂરું નામ શું છે?",o:["Central Processing Unit","Computer Processing Unit","Control Program Unit","Central Program Unit"],a:0},
 
-{q:"50. {q:"Which tag is used for the largest heading in HTML? / HTML માં સૌથી મોટી હેડિંગ માટે કયો ટેગ વપરાય છે?",o:["<h6>","<head>","<h1>","<heading>"],a:2},
+{q:"50. Which tag is used for the largest heading in HTML? / HTML માં સૌથી મોટી હેડિંગ માટે કયો ટેગ વપરાય છે?",o:["","","",""],a:2}
 
 ],
 
@@ -635,7 +608,7 @@ m4:[
 
 {q:"6. What is the full form of HTTP? / HTTP નું પૂરું નામ શું છે?",o:["Hyper Text Transfer Protocol","High Transfer Text Protocol","Hyper Text Type Protocol","Hyper Terminal Transfer Protocol"],a:0},
 
-{q:"7.{q:"Which tag is used to create a hyperlink in HTML? / HTML માં હાઇપરલિંક બનાવવા માટે કયો ટેગ વપરાય છે?",o:["<link>","<a>","<href>","<url>"],a:1},
+{q:"7. Which tag is used to create a hyperlink in HTML? / HTML માં હાઇપરલિંક બનાવવા માટે કયો ટેગ વપરાય છે?",o:["","","",""],a:1},
 
 {q:"8. Which of the following is a permanent storage device? / નીચેનામાંથી કયું કાયમી સ્ટોરેજ ઉપકરણ છે?",o:["RAM","Cache","Hard Disk","Registers"],a:2},
 
@@ -667,7 +640,7 @@ m4:[
 
 {q:"22. What is the full form of RAM? / RAM નું પૂરું નામ શું છે?",o:["Read Access Memory","Random Access Memory","Run Access Memory","Real Access Memory"],a:1},
 
-{q:"23. {q:"Which HTML tag is used for the smallest heading? / સૌથી નાની હેડિંગ માટે કયો HTML ટેગ વપરાય છે?",o:["<h1>","<head>","<h6>","<small>"],a:2},
+{q:"23. Which HTML tag is used for the smallest heading? / સૌથી નાની હેડિંગ માટે કયો HTML ટેગ વપરાય છે?",o:["","","",""],a:2},
 
 {q:"24. Which topology connects all computers in a single main cable? / કઈ ટોપોલોજી તમામ કોમ્પ્યુટરને એક મુખ્ય કેબલમાં જોડે છે?",o:["Star","Ring","Bus","Mesh"],a:2},
 
@@ -695,7 +668,7 @@ m4:[
 
 {q:"36. What is the full form of LAN? / LAN નું પૂરું નામ શું છે?",o:["Local Area Network","Long Area Network","Light Area Network","Land Area Network"],a:0},
 
-{q:"37.{q:"Which tag is used to insert a line break in HTML? / HTML માં લાઇન બદલવા (Break) માટે કયો ટેગ વપરાય છે?",o:["<p>","<br>","<hr>","<break>"],a:1},
+{q:"37. Which tag is used to insert a line break in HTML? / HTML માં લાઇન બદલવા (Break) માટે કયો ટેગ વપરાય છે?",o:["","","",""],a:1},
 
 {q:"38. Which memory is also known as volatile memory? / કઈ મેમરીને 'વોલેટાઇલ' (અસ્થાયી) મેમરી તરીકે ઓળખવામાં આવે છે?",o:["ROM","Hard Disk","RAM","Flash Drive"],a:2},
 
@@ -733,7 +706,7 @@ m5:[
 
 {q:"4. In JavaScript, which symbol is used for comments? / જાવાસ્ક્રિપ્ટમાં ટિપ્પણી (Comments) માટે કયા ચિહ્નનો ઉપયોગ થાય છે?",o:["#","//","/* /","Both // and / */"],a:3},
 
-{q:"5.{q:"Which HTML tag is used to create a table row? / HTML માં ટેબલ રો (Row) બનાવવા માટે કયો ટેગ વપરાય છે?",o:["<tr>","<td>","<th>","<table>"],a:0},
+{q:"5. Which HTML tag is used to create a table row? / HTML માં ટેબલ રો (Row) બનાવવા માટે કયો ટેગ વપરાય છે?",o:["","","",""],a:2},
 
 {q:"6. What does 'VBA' stand for in Excel? / એક્સેલમાં 'VBA' નું પૂરું નામ શું છે?",o:["Visual Basic for Applications","Virtual Binary Array","Variable Basic Analysis","Visual Build Assembly"],a:0},
 
@@ -757,7 +730,7 @@ m5:[
 
 {q:"16. In Excel, which symbol is used to fix a cell reference (Absolute Reference)? / એક્સેલમાં સેલ રેફરન્સને ફિક્સ કરવા માટે કયા ચિહ્નનો ઉપયોગ થાય છે?",o:["%","&","$","#"],a:2},
 
-{q:"17. {q:"Which tag is used to define an unordered list in HTML? / HTML માં અનઓર્ડર્ડ લિસ્ટ (Unordered List) માટે કયો ટેગ વપરાય છે?",o:["<ol>","<ul>","<li>","<dl>"],a:1},
+{q:"17. Which tag is used to define an unordered list in HTML? / HTML માં અનઓર્ડર્ડ લિસ્ટ (Unordered List) માટે કયો ટેગ વપરાય છે?",o:["","","",""],a:2},
 
 {q:"18. What is 'Phishing' in cyber security? / સાયબર સિક્યોરિટીમાં 'ફિશિંગ' શું છે?",o:["A type of virus","A method of identity theft","A software update","A firewall setting"],a:1},
 
@@ -781,7 +754,7 @@ m5:[
 
 {q:"28. Which of the following is a NoSQL database? / નીચેનામાંથી કયો NoSQL ડેટાબેઝ છે?",o:["MySQL","Oracle","MongoDB","PostgreSQL"],a:2},
 
-{q:"29. {q:"Which HTML tag is used to insert an image? / HTML માં ઇમેજ ઇન્સર્ટ કરવા માટે કયો ટેગ વપરાય છે?",o:["<img>","<image>","<src>","<pic>"],a:0},
+{q:"29. Which HTML tag is used to insert an image? / HTML માં ઇમેજ ઇન્સર્ટ કરવા માટે કયો ટેગ વપરાય છે?",o:["","","",""],a:2},
 
 {q:"30. What is the shortcut key to open the Task Manager in Windows? / વિન્ડોઝમાં ટાસ્ક મેનેજર ખોલવા માટેની શોર્ટકટ કી કઈ છે?",o:["Ctrl + Alt + Del","Ctrl + Shift + Esc","Alt + Tab","Win + R"],a:1},
 
@@ -791,7 +764,7 @@ m5:[
 
 {q:"33. What is the full form of SSD? / SSD નું પૂરું નામ શું છે?",o:["Solid State Drive","Solid Static Drive","Secure State Drive","System Storage Drive"],a:0},
 
-{q:"34. {q:"In HTML, which tag is used to create a drop-down list? / HTML માં ડ્રોપ-ડાઉન લિસ્ટ બનાવવા કયો ટેગ વપરાય છે?",o:["<input>","<dropdown>","<select>","<option>"],a:2},
+{q:"34. In HTML, which tag is used to create a drop-down list? / HTML માં ડ્રોપ-ડાઉન લિસ્ટ બનાવવા કયો ટેગ વપરાય છે?",o:["","","",""],a:2},
 
 {q:"35. Which JavaScript method is used to write text into the browser console? / બ્રાઉઝર કન્સોલમાં ટેક્સ્ટ લખવા કઈ JavaScript મેથડ વપરાય છે?",o:["console.write()","console.log()","console.print()","console.output()"],a:1},
 
@@ -801,7 +774,7 @@ m5:[
 
 {q:"38. What is the full form of BIOS? / BIOS નું પૂરું નામ શું છે?",o:["Binary Input Output System","Basic Input Output System","Basic International Output System","Binary International Output System"],a:1},
 
-{q:"39.{q:"Which HTML tag is used to define the title of the document? / ડોક્યુમેન્ટનું શીર્ષક વ્યાખ્યાયિત કરવા માટે કયો HTML ટેગ વપરાય છે?",o:["<meta>","<title>","<head>","<h1>"],a:1},
+{q:"39. Which HTML tag is used to define the title of the document? / ડોક્યુમેન્ટનું શીર્ષક વ્યાખ્યાયિત કરવા માટે કયો HTML ટેગ વપરાય છે?",o:["","","",""],a:2},
 
 {q:"40. In Linux, which command is used to change the current directory? / Linux માં હાલની ડિરેક્ટરી બદલવા માટે કયો કમાન્ડ વપરાય છે?",o:["mkdir","cd","cp","mv"],a:1},
 
@@ -815,7 +788,7 @@ m5:[
 
 {q:"45. What is the full form of ISP? / ISP નું પૂરું નામ શું છે?",o:["Internet Service Provider","International Service Provider","Internet Security Protocol","Internal System Provider"],a:0},
 
-{q:"46.{q:"Which HTML tag is used to create a numbered list? / HTML માં નંબરવાળું લિસ્ટ (Numbered List) બનાવવા કયો ટેગ વપરાય છે?",o:["<ul>","<ol>","<li>","<dl>"],a:1},
+{q:"46. Which HTML tag is used to create a numbered list? / HTML માં નંબરવાળું લિસ્ટ (Numbered List) બનાવવા કયો ટેગ વપરાય છે?",o:["","","",""],a:2},
 
 {q:"47. What is 'Spam' in the context of emails? / ઈમેલના સંદર્ભમાં 'સ્પામ' શું છે?",o:["Important emails","Deleted emails","Unsolicited junk emails","Encrypted emails"],a:2},
 
@@ -831,7 +804,7 @@ m5:[
 
 m6:[
 
-{q:"1. What is the full form of PHP? / PHP નું પૂરું નામ શું છે?",o:["Personal Home Page","Preprocessed Hypertext Page","Hypertext Preprocessor","Private Hypertext Processor"],a:2},{q:"2. {q:"Which HTML tag is used to create a drop-down list? / HTML માં ડ્રોપ-ડાઉન લિસ્ટ બનાવવા માટે કયો ટેગ વપરાય છે?",o:["<input>","<select>","<option>","<list>"],a:1},{q:"3. Which shortcut key is used to close an active window in Windows? / વિન્ડોઝમાં સક્રિય વિન્ડો બંધ કરવા માટે કઈ શોર્ટકટ કી વપરાય છે?",o:["Ctrl + C","Alt + F4","Ctrl + Alt + Del","Win + L"],a:1},{q:"4. In MS Excel, which function is used to calculate the average? / MS Excel માં સરેરાશ ગણવા માટે કયું ફંક્શન વપરાય છે?",o:["AVG()","TOTAL()","AVERAGE()","SUM()"],a:2},{q:"5. What is the full form of Wi-Fi? / Wi-Fi નું પૂરું નામ શું છે?",o:["Wireless Fidelity","Wired Fidelity","Wireless Focus","Wireless Fiber"],a:0},{q:"6. Which command is used to create a new directory in Linux? / Linux માં નવી ડિરેક્ટરી બનાવવા માટે કયો કમાન્ડ વપરાય છે?",o:["cd","mkdir","rmdir","ls"],a:1},{q:"7. Which of the following is a type of CSS? / નીચેનામાંથી કયું CSS નો પ્રકાર છે?",o:["Inline","Internal","External","All of the above"],a:3},{q:"8. What does 'OS' stand for? / 'OS' નું પૂરું નામ શું છે?",o:["Open Software","Operating System","Optical Storage","Order System"],a:1},{q:"9.{q:"Which HTML tag is used to display an image? / HTML માં ઇમેજ પ્રદર્શિત કરવા માટે કયો ટેગ વપરાય છે?",o:["<picture>","<src>","<img>","<image>"],a:2},{q:"10. In JavaScript, which function is used to output data in an alert box? / JavaScript માં એલર્ટ બોક્સમાં ડેટા બતાવવા કયું ફંક્શન વપરાય છે?",o:["msg()","alert()","confirm()","display()"],a:1},{q:"11. What is the full form of SSD? / SSD નું પૂરું નામ શું છે?",o:["Solid Static Drive","Solid State Drive","Secure State Drive","System Storage Drive"],a:1},{q:"12. Which of the following is an input device? / નીચેનામાંથી કયું ઇનપુટ ડિવાઇસ છે?",o:["Monitor","Printer","Scanner","Speaker"],a:2},{q:"13. Which shortcut key is used to 'Undo' the last action? / છેલ્લી ક્રિયાને 'Undo' કરવા માટે કઈ શોર્ટકટ કી વપરાય છે?",o:["Ctrl + Y","Ctrl + Z","Ctrl + X","Ctrl + U"],a:1},{q:"14. In Excel, a cell reference like $A$1 is called? / એક્સેલમાં $A$1 જેવા સેલ રેફરન્સને શું કહેવાય?",o:["Relative Reference","Mixed Reference","Absolute Reference","Static Reference"],a:2},{q:"15. What is the full form of USB? / USB નું પૂરું નામ શું છે?",o:["Universal Serial Bus","United Serial Bus","Universal System Bus","Unique Serial Bus"],a:0},{q:"16. {q:"Which tag is used for the largest heading in HTML? / HTML માં સૌથી મોટી હેડિંગ માટે કયો ટેગ વપરાય છે?",o:["<h6>","<head>","<h1>","<title>"],a:2},{q:"17. What is 'Malware'? / 'માલવેર' શું છે?",o:["Safety Software","Malicious Software","Hardware Component","Operating System"],a:1},{q:"18. Which function key is used to refresh a web page? / વેબ પેજને રિફ્રેશ કરવા માટે કઈ ફંક્શન કી વપરાય છે?",o:["F1","F2","F5","F11"],a:2},{q:"19. In JavaScript, which symbol is used for multiplication? / JavaScript માં ગુણાકાર માટે કયા ચિહ્નનો ઉપયોગ થાય છે?",o:["x","@","*","#"],a:2},{q:"20. What is the full form of RAM? / RAM નું પૂરું નામ શું છે?",o:["Read Access Memory","Random Access Memory","Run Access Memory","Real Access Memory"],a:1},{q:"21. Which part of the computer is called the 'Brain'? / કોમ્પ્યુટરના કયા ભાગને 'મગજ' કહેવામાં આવે છે?",o:["Monitor","CPU","Keyboard","RAM"],a:1},{q:"22. {q:"Which HTML tag is used for a line break? / HTML માં લાઇન તોડવા (Break) માટે કયો ટેગ વપરાય છે?",o:["<hr>","<p>","<br>","<break>"],a:2},{q:"23. What is the shortcut key to open the 'Run' command? / 'Run' કમાન્ડ ખોલવા માટેની શોર્ટકટ કી કઈ છે?",o:["Win + E","Win + R","Win + D","Win + L"],a:1},{q:"24. In Excel, which tool allows you to summarize large amounts of data? / એક્સેલમાં મોટા ડેટાનો સારાંશ આપવા માટે કયું ટૂલ વપરાય છે?",o:["Filter","Sort","Pivot Table","Data Validation"],a:2},{q:"25. What is the base of the Octal number system? / ઓક્ટલ નંબર સિસ્ટમનો બેઝ શું છે?",o:["2","8","10","16"],a:1},{q:"26. Which of the following is a NoSQL database? / નીચેનામાંથી કયો NoSQL ડેટાબેઝ છે?",o:["MySQL","MongoDB","Oracle","PostgreSQL"],a:1},{q:"27. What does 'WWW' stand for? / 'WWW' નું પૂરું નામ શું છે?",o:["World Wide Web","World Whole Web","Web Wide World","Wide World Web"],a:0},{q:"28. {q:"Which HTML tag is used to create a link? / HTML માં લિંક બનાવવા માટે કયો ટેગ વપરાય છે?",o:["<link>","<a>","<href>","<url>"],a:1},{q:"29. In Linux, which command is used to delete a file? / Linux માં ફાઇલ ડીલીટ કરવા માટે કયો કમાન્ડ વપરાય છે?",o:["del","erase","rm","remove"],a:2},{q:"30. What is the shortcut key for 'Paste' in Windows? / વિન્ડોઝમાં 'Paste' કરવા માટેની શોર્ટકટ કી કઈ છે?",o:["Ctrl + P","Ctrl + V","Ctrl + C","Ctrl + X"],a:1},{q:"31. Which of the following is an Output device? / નીચેનામાંથી કયું આઉટપુટ ડિવાઇસ છે?",o:["Mouse","Keyboard","Monitor","Scanner"],a:2},{q:"32. What is the full form of PDF? / PDF નું પૂરું નામ શું છે?",o:["Printable Document Format","Portable Document Format","Portable Data Format","Personal Data File"],a:1},{q:"33. In JavaScript, how do you declare a constant variable? / JavaScript માં અચલ (Constant) વેરીિએબલ કેવી રીતે જાહેર કરાય છે?",o:["var","let","const","constant"],a:2},{q:"34. {q:"Which HTML tag is used to define an unordered list? / HTML માં અનઓર્ડર્ડ લિસ્ટ માટે કયો ટેગ વપરાય છે?",o:["<ol>","<li>","<ul>","<list>"],a:2},{q:"35. What is 'Firewall' used for? / 'ફાયરવોલ' શા માટે વપરાય છે?",o:["Speed up Internet","Data Backup","Security / Preventing unauthorized access","Scanning Files"],a:2},{q:"36. Which function in Excel counts cells containing numbers? / એક્સેલમાં સંખ્યાઓ ધરાવતા સેલ ગણવા કયું ફંક્શન વપરાય છે?",o:["COUNTA()","COUNTIF()","COUNT()","SUM()"],a:2},{q:"37. What is the full form of LAN? / LAN નું પૂરું નામ શું છે?",o:["Local Area Network","Long Area Network","Land Area Network","Light Area Network"],a:0},{q:"38. Which shortcut key is used to 'Select All' text? / બધું લખાણ પસંદ કરવા માટે કઈ શોર્ટકટ કી વપરાય છે?",o:["Ctrl + S","Ctrl + A","Ctrl + Z","Ctrl + V"],a:1},{q:"39. Which CSS property is used to change the background color? / બેકગ્રાઉન્ડ રંગ બદલવા કઈ CSS પ્રોપર્ટી વપરાય છે?",o:["color","bgcolor","background-color","bg-color"],a:2},{q:"40. In MS Word, which feature checks spelling and grammar? / MS Word માં સ્પેલિંગ અને ગ્રામર ચકાસવા કયું ફીચર વપરાય છે?",o:["AutoCorrect","Spelling & Grammar","Review","Format"],a:1},{q:"41. What is the full form of BIOS? / BIOS નું પૂરું નામ શું છે?",o:["Binary Input Output System","Basic Input Output System","Basic Internal Output System","Binary Internal Output System"],a:1},{q:"42. {q:"Which HTML tag is used to create a table? / HTML માં ટેબલ બનાવવા કયો ટેગ વપરાય છે?",o:["<tr>","<table>","<td>","<th>"],a:1},{q:"43. What is the shortcut key for 'Redo'? / 'Redo' માટેની શોર્ટકટ કી કઈ છે?",o:["Ctrl + Z","Ctrl + Y","Ctrl + R","Ctrl + Shift + Z"],a:1},{q:"44. Which protocol is used to transfer files over the internet? / ઇન્ટરનેટ પર ફાઇલો ટ્રાન્સફર કરવા કયો પ્રોટોકોલ વપરાય છે?",o:["HTTP","FTP","SMTP","IP"],a:1},{q:"45. In JavaScript, 'typeof' operator is used for? / JavaScript માં 'typeof' ઓપરેટર શા માટે વપરાય છે?",o:["Check value","Check data type","Check error","Check length"],a:1},{q:"46. What is the capacity of a standard DVD? / એક સ્ટાન્ડર્ડ DVD ની ક્ષમતા કેટલી હોય છે?",o:["700 MB","4.7 GB","1.44 MB","1 TB"],a:1},{q:"47. {q:"Which tag is used to make text bold in HTML? / HTML માં લખાણને બોલ્ડ (Bold) કરવા કયો ટેગ વપરાય છે?",o:["<i>","<u>","<b>","<em>"],a:2},{q:"48. Which software is an example of a Web Browser? / નીચેનામાંથી કયું સોફ્ટવેર વેબ બ્રાઉઝરનું ઉદાહરણ છે?",o:["Windows Media Player","Google Chrome","MS Paint","Photoshop"],a:1},{q:"49. What is the full form of URL? / URL નું પૂરું નામ શું છે?",o:["Uniform Resource Locator","Universal Resource Locator","Unique Resource Link","Unit Resource Locator"],a:0},{q:"50. In Excel, which symbol is used to start a formula? / એક્સેલમાં ફોર્મ્યુલા શરૂ કરવા કયા ચિહ્નનો ઉપયોગ થાય છે?",o:["+","$","=","#"],a:2}
+{q:"1. What is the full form of PHP? / PHP નું પૂરું નામ શું છે?",o:["Personal Home Page","Preprocessed Hypertext Page","Hypertext Preprocessor","Private Hypertext Processor"],a:2},{q:"2. Which HTML tag is used to create a drop-down list? / HTML માં ડ્રોપ-ડાઉન લિસ્ટ બનાવવા માટે કયો ટેગ વપરાય છે?",o:["","","",""],a:1},{q:"3. Which shortcut key is used to close an active window in Windows? / વિન્ડોઝમાં સક્રિય વિન્ડો બંધ કરવા માટે કઈ શોર્ટકટ કી વપરાય છે?",o:["Ctrl + C","Alt + F4","Ctrl + Alt + Del","Win + L"],a:1},{q:"4. In MS Excel, which function is used to calculate the average? / MS Excel માં સરેરાશ ગણવા માટે કયું ફંક્શન વપરાય છે?",o:["AVG()","TOTAL()","AVERAGE()","SUM()"],a:2},{q:"5. What is the full form of Wi-Fi? / Wi-Fi નું પૂરું નામ શું છે?",o:["Wireless Fidelity","Wired Fidelity","Wireless Focus","Wireless Fiber"],a:0},{q:"6. Which command is used to create a new directory in Linux? / Linux માં નવી ડિરેક્ટરી બનાવવા માટે કયો કમાન્ડ વપરાય છે?",o:["cd","mkdir","rmdir","ls"],a:1},{q:"7. Which of the following is a type of CSS? / નીચેનામાંથી કયું CSS નો પ્રકાર છે?",o:["Inline","Internal","External","All of the above"],a:3},{q:"8. What does 'OS' stand for? / 'OS' નું પૂરું નામ શું છે?",o:["Open Software","Operating System","Optical Storage","Order System"],a:1},{q:"9. Which HTML tag is used to display an image? / HTML માં ઇમેજ પ્રદર્શિત કરવા માટે કયો ટેગ વપરાય છે?",o:["","","",""],a:2},{q:"10. In JavaScript, which function is used to output data in an alert box? / JavaScript માં એલર્ટ બોક્સમાં ડેટા બતાવવા કયું ફંક્શન વપરાય છે?",o:["msg()","alert()","confirm()","display()"],a:1},{q:"11. What is the full form of SSD? / SSD નું પૂરું નામ શું છે?",o:["Solid Static Drive","Solid State Drive","Secure State Drive","System Storage Drive"],a:1},{q:"12. Which of the following is an input device? / નીચેનામાંથી કયું ઇનપુટ ડિવાઇસ છે?",o:["Monitor","Printer","Scanner","Speaker"],a:2},{q:"13. Which shortcut key is used to 'Undo' the last action? / છેલ્લી ક્રિયાને 'Undo' કરવા માટે કઈ શોર્ટકટ કી વપરાય છે?",o:["Ctrl + Y","Ctrl + Z","Ctrl + X","Ctrl + U"],a:1},{q:"14. In Excel, a cell reference like $A$1 is called? / એક્સેલમાં $A$1 જેવા સેલ રેફરન્સને શું કહેવાય?",o:["Relative Reference","Mixed Reference","Absolute Reference","Static Reference"],a:2},{q:"15. What is the full form of USB? / USB નું પૂરું નામ શું છે?",o:["Universal Serial Bus","United Serial Bus","Universal System Bus","Unique Serial Bus"],a:0},{q:"16. Which tag is used for the largest heading in HTML? / HTML માં સૌથી મોટી હેડિંગ માટે કયો ટેગ વપરાય છે?",o:["","","",""],a:2},{q:"17. What is 'Malware'? / 'માલવેર' શું છે?",o:["Safety Software","Malicious Software","Hardware Component","Operating System"],a:1},{q:"18. Which function key is used to refresh a web page? / વેબ પેજને રિફ્રેશ કરવા માટે કઈ ફંક્શન કી વપરાય છે?",o:["F1","F2","F5","F11"],a:2},{q:"19. In JavaScript, which symbol is used for multiplication? / JavaScript માં ગુણાકાર માટે કયા ચિહ્નનો ઉપયોગ થાય છે?",o:["x","@","*","#"],a:2},{q:"20. What is the full form of RAM? / RAM નું પૂરું નામ શું છે?",o:["Read Access Memory","Random Access Memory","Run Access Memory","Real Access Memory"],a:1},{q:"21. Which part of the computer is called the 'Brain'? / કોમ્પ્યુટરના કયા ભાગને 'મગજ' કહેવામાં આવે છે?",o:["Monitor","CPU","Keyboard","RAM"],a:1},{q:"22. Which HTML tag is used for a line break? / HTML માં લાઇન તોડવા (Break) માટે કયો ટેગ વપરાય છે?",o:["","","",""],a:2},{q:"23. What is the shortcut key to open the 'Run' command? / 'Run' કમાન્ડ ખોલવા માટેની શોર્ટકટ કી કઈ છે?",o:["Win + E","Win + R","Win + D","Win + L"],a:1},{q:"24. In Excel, which tool allows you to summarize large amounts of data? / એક્સેલમાં મોટા ડેટાનો સારાંશ આપવા માટે કયું ટૂલ વપરાય છે?",o:["Filter","Sort","Pivot Table","Data Validation"],a:2},{q:"25. What is the base of the Octal number system? / ઓક્ટલ નંબર સિસ્ટમનો બેઝ શું છે?",o:["2","8","10","16"],a:1},{q:"26. Which of the following is a NoSQL database? / નીચેનામાંથી કયો NoSQL ડેટાબેઝ છે?",o:["MySQL","MongoDB","Oracle","PostgreSQL"],a:1},{q:"27. What does 'WWW' stand for? / 'WWW' નું પૂરું નામ શું છે?",o:["World Wide Web","World Whole Web","Web Wide World","Wide World Web"],a:0},{q:"28. Which HTML tag is used to create a link? / HTML માં લિંક બનાવવા માટે કયો ટેગ વપરાય છે?",o:["","","",""],a:1},{q:"29. In Linux, which command is used to delete a file? / Linux માં ફાઇલ ડીલીટ કરવા માટે કયો કમાન્ડ વપરાય છે?",o:["del","erase","rm","remove"],a:2},{q:"30. What is the shortcut key for 'Paste' in Windows? / વિન્ડોઝમાં 'Paste' કરવા માટેની શોર્ટકટ કી કઈ છે?",o:["Ctrl + P","Ctrl + V","Ctrl + C","Ctrl + X"],a:1},{q:"31. Which of the following is an Output device? / નીચેનામાંથી કયું આઉટપુટ ડિવાઇસ છે?",o:["Mouse","Keyboard","Monitor","Scanner"],a:2},{q:"32. What is the full form of PDF? / PDF નું પૂરું નામ શું છે?",o:["Printable Document Format","Portable Document Format","Portable Data Format","Personal Data File"],a:1},{q:"33. In JavaScript, how do you declare a constant variable? / JavaScript માં અચલ (Constant) વેરીિએબલ કેવી રીતે જાહેર કરાય છે?",o:["var","let","const","constant"],a:2},{q:"34. Which HTML tag is used to define an unordered list? / HTML માં અનઓર્ડર્ડ લિસ્ટ માટે કયો ટેગ વપરાય છે?",o:["","","",""],a:2},{q:"35. What is 'Firewall' used for? / 'ફાયરવોલ' શા માટે વપરાય છે?",o:["Speed up Internet","Data Backup","Security / Preventing unauthorized access","Scanning Files"],a:2},{q:"36. Which function in Excel counts cells containing numbers? / એક્સેલમાં સંખ્યાઓ ધરાવતા સેલ ગણવા કયું ફંક્શન વપરાય છે?",o:["COUNTA()","COUNTIF()","COUNT()","SUM()"],a:2},{q:"37. What is the full form of LAN? / LAN નું પૂરું નામ શું છે?",o:["Local Area Network","Long Area Network","Land Area Network","Light Area Network"],a:0},{q:"38. Which shortcut key is used to 'Select All' text? / બધું લખાણ પસંદ કરવા માટે કઈ શોર્ટકટ કી વપરાય છે?",o:["Ctrl + S","Ctrl + A","Ctrl + Z","Ctrl + V"],a:1},{q:"39. Which CSS property is used to change the background color? / બેકગ્રાઉન્ડ રંગ બદલવા કઈ CSS પ્રોપર્ટી વપરાય છે?",o:["color","bgcolor","background-color","bg-color"],a:2},{q:"40. In MS Word, which feature checks spelling and grammar? / MS Word માં સ્પેલિંગ અને ગ્રામર ચકાસવા કયું ફીચર વપરાય છે?",o:["AutoCorrect","Spelling & Grammar","Review","Format"],a:1},{q:"41. What is the full form of BIOS? / BIOS નું પૂરું નામ શું છે?",o:["Binary Input Output System","Basic Input Output System","Basic Internal Output System","Binary Internal Output System"],a:1},{q:"42. Which HTML tag is used to create a table? / HTML માં ટેબલ બનાવવા કયો ટેગ વપરાય છે?",o:["","","",""],a:1},{q:"43. What is the shortcut key for 'Redo'? / 'Redo' માટેની શોર્ટકટ કી કઈ છે?",o:["Ctrl + Z","Ctrl + Y","Ctrl + R","Ctrl + Shift + Z"],a:1},{q:"44. Which protocol is used to transfer files over the internet? / ઇન્ટરનેટ પર ફાઇલો ટ્રાન્સફર કરવા કયો પ્રોટોકોલ વપરાય છે?",o:["HTTP","FTP","SMTP","IP"],a:1},{q:"45. In JavaScript, 'typeof' operator is used for? / JavaScript માં 'typeof' ઓપરેટર શા માટે વપરાય છે?",o:["Check value","Check data type","Check error","Check length"],a:1},{q:"46. What is the capacity of a standard DVD? / એક સ્ટાન્ડર્ડ DVD ની ક્ષમતા કેટલી હોય છે?",o:["700 MB","4.7 GB","1.44 MB","1 TB"],a:1},{q:"47. Which tag is used to make text bold in HTML? / HTML માં લખાણને બોલ્ડ (Bold) કરવા કયો ટેગ વપરાય છે?",o:["","","",""],a:2},{q:"48. Which software is an example of a Web Browser? / નીચેનામાંથી કયું સોફ્ટવેર વેબ બ્રાઉઝરનું ઉદાહરણ છે?",o:["Windows Media Player","Google Chrome","MS Paint","Photoshop"],a:1},{q:"49. What is the full form of URL? / URL નું પૂરું નામ શું છે?",o:["Uniform Resource Locator","Universal Resource Locator","Unique Resource Link","Unit Resource Locator"],a:0},{q:"50. In Excel, which symbol is used to start a formula? / એક્સેલમાં ફોર્મ્યુલા શરૂ કરવા કયા ચિહ્નનો ઉપયોગ થાય છે?",o:["+","$","=","#"],a:2}
 
 ],
  
@@ -922,7 +895,7 @@ m8: [
 {q:"32. Which JavaScript data type gives True or False? / જાવાસ્ક્રિપ્ટમાં કયો ડેટા ટાઈપ ટ્રુ અથવા ફોલ્સ મૂલ્ય આપે છે?",o:["String","Boolean","Number","Object"],a:1},
 {q:"33. Which function sends messages requesting text input from users? / ટેક્સ્ટ ઇનપુટ માટે વિનંતી કરતા વપરાશકર્તાઓને કયો કાર્ય સંદેશાઓ મોકલે છે?",o:["Alert","Confirm","Notice","Prompt"],a:3},
 {q:"34. What is the row limit of MS Excel 2010? / MS એક્સલ 2010 ની રો (Row) લિમિટ કેટલી છે?",o:["1,048,576","65,536","1,00,000","10,48,576"],a:0},
-{q:"35. {q:"Which tag creates a checkbox in HTML forms? / HTML ફોર્મમાં કયો ટેગ ચેકબોક્સ બનાવે છે?",o:["<checkbox>","<input type='checkbox'>","<check>","<option>"],a:1},
+{q:"35. Which tag creates a checkbox in HTML forms? / HTML ફોર્મમાં કયો ટેગ ચેકબોક્સ બનાવે છે?",o:["","","",""],a:1},
 {q:"36. Which port connects the monitor to the CPU? / મોનિટરને CPU સાથે જોડવા માટે કયા પોર્ટનો ઉપયોગ થાય છે?",o:["USB","HDMI","VGA","PS2"],a:2},
 {q:"37. Which are the two main parts of an HTML document? / HTML ડોક્યુમેન્ટમાં કયા મુખ્ય બે ભાગ આવેલા છે?",o:["Top and Bottom","Header and Footer","Head and Body","Title and Text"],a:2},
 {q:"38. Flipkart, Amazon, and Myntra are which type of E-commerce? / ફ્લિપકાર્ટ અને એમેઝોન કયા પ્રકારની ઈ-કોમર્સ કંપનીઓ છે?",o:["B2C","B2B","C2B","C2C"],a:0},
@@ -1051,7 +1024,7 @@ m11: [
 {q:"5. Which device is used for connecting a computer to a telephone line? / કમ્પ્યુટરને ટેલિફોન લાઇન સાથે જોડવા માટે કયા સાધનનો ઉપયોગ થાય છે?",o:["Router","Modem","Switch","Hub"],a:1},
 {q:"6. Which command is used to see the contents of a directory in DOS? / DOS માં ડિરેક્ટરીની સામગ્રી જોવા માટે કયો આદેશ વપરાય છે?",o:["CLS","DIR","CD","TYPE"],a:1},
 {q:"7. What is the full form of BIOS? / BIOS નું પૂરું નામ શું છે?",o:["Binary Input Output System","Basic Input Output System","Business Input Output System","Basic Interface Operating System"],a:1},
-{q:"8.{q:"Which HTML tag is used for the largest heading? / HTML માં સૌથી મોટી હેડિંગ માટે કયો ટેગ વપરાય છે?",o:["<h6>","<heading>","<head>","<h1>"],a:3},
+{q:"8. Which HTML tag is used for the largest heading? / HTML માં સૌથી મોટી હેડિંગ માટે કયો ટેગ વપરાય છે?",o:["","","",""],a:2},
 {q:"9. What is the full form of RAM? / RAM નું પૂરું નામ શું છે?",o:["Read Access Memory","Random Access Memory","Rapid Access Memory","Real Access Memory"],a:1},
 {q:"10. Which shortcut key is used to save a document in MS Word? / MS Word માં ડોક્યુમેન્ટ સેવ કરવા માટે કઈ શોર્ટકટ કી વપરાય છે?",o:["Ctrl + S","Ctrl + P","Ctrl + O","Ctrl + N"],a:0},
 {q:"11. What is the full form of HTTP? / HTTP નું પૂર્ણ સ્વરૂપ શું છે?",o:["Hyper Text Transfer Protocol","High Text Transfer Protocol","Hyper Text Terminal Protocol","Hyper Text Type Protocol"],a:0},
@@ -1069,7 +1042,7 @@ m11: [
 {q:"23. What is the full form of WWW? / WWW નું પૂરું નામ શું છે?",o:["World Wide Web","World Web Wide","Wide World Web","Web World Wide"],a:0},
 {q:"24. Which Excel function is used to add values? / એક્સેલમાં કિંમતોનો સરવાળો કરવા માટે કયું ફંક્શન વપરાય છે?",o:["COUNT","AVERAGE","SUM","MAX"],a:2},
 {q:"25. What is the full form of PDF? / PDF નું પૂરું નામ શું છે?",o:["Personal Document Format","Portable Document Format","Print Document Format","Portable Data Format"],a:1},
-{q:"26.{q:"Which HTML tag is used for creating a link? / HTML માં લિંક બનાવવા માટે કયો ટેગ વપરાય છે?",o:["<link>","<a>","<href>","<url>"],a:1},
+{q:"26. Which HTML tag is used for creating a link? / HTML માં લિંક બનાવવા માટે કયો ટેગ વપરાય છે?",o:["","","",""],a:1},
 {q:"27. What is the full form of IP? / IP નું પૂરું નામ શું છે?",o:["Internal Protocol","Internet Protocol","Internet Process","Instant Protocol"],a:1},
 {q:"28. Which key is used to refresh a web page? / વેબ પેજ રિફ્રેશ કરવા માટે કઈ કી વપરાય છે?",o:["F2","F5","F11","F10"],a:1},
 {q:"29. What is the full form of CRT? / CRT નું પૂરું નામ શું છે?",o:["Cathode Ray Tube","Computer Ray Tube","Central Ray Tube","Cathode Real Tube"],a:0},
@@ -1083,7 +1056,7 @@ m11: [
 {q:"37. What is the full form of IC in computers? / કમ્પ્યુટરમાં IC નું પૂરું નામ શું છે?",o:["Integrated Circuit","Internal Circuit","Intelligent Circuit","Integrated Chip"],a:0},
 {q:"38. Which command is used to delete a file in DOS? / DOS માં ફાઈલ ડીલીટ કરવા માટે કયો આદેશ વપરાય છે?",o:["REMOVE","DEL","EXIT","DROP"],a:1},
 {q:"39. What is the full form of CMOS? / CMOS નું પૂરું નામ શું છે?",o:["Complementary Metal-Oxide Semiconductor","Complete Metal-Oxide Semiconductor","Complementary Metal-Oxygen System","Central Metal-Oxide System"],a:0},
-{q:"40. {q:"Which tag is used to insert an image in HTML? / HTML માં ઈમેજ મૂકવા માટે કયો ટેગ વપરાય છે?",o:["<img>","<image>","<src>","<picture>"],a:0},
+{q:"40. Which tag is used to insert an image in HTML? / HTML માં ઈમેજ મૂકવા માટે કયો ટેગ વપરાય છે?",o:["","","",""],a:2},
 {q:"41. What is the full form of OS? / OS નું પૂરું નામ શું છે?",o:["Operating System","Open System","Original System","Optical System"],a:0},
 {q:"42. Which key is used to rename a folder? / ફોલ્ડરનું નામ બદલવા માટે કઈ કી વપરાય છે?",o:["F1","F2","F3","F4"],a:1},
 {q:"43. What is the full form of SSD? / SSD નું પૂરું નામ શું છે?",o:["Solid State Drive","Solid Silver Drive","Secure State Drive","Software State Drive"],a:0},
@@ -1103,7 +1076,7 @@ m12: [
 {q:"4. What is the full form of SMTP? / SMTP નું પૂરું નામ શું છે?",o:["Simple Mail Transfer Protocol","Single Mail Transfer Protocol","Simple Message Transfer Protocol","Secure Mail Transfer Protocol"],a:0},
 {q:"5. Which command is used to clear the screen in DOS? / DOS માં સ્ક્રીન સાફ કરવા માટે કયો આદેશ વપરાય છે?",o:["CLEAR","CLS","CLEAN","ERASE"],a:1},
 {q:"6. What is the full form of XML? / XML નું પૂરું નામ શું છે?",o:["Extensible Markup Language","Example Markup Language","Extra Markup Language","X-Markup Language"],a:0},
-{q:"7. {q:"Which HTML tag is used to create a table row? / HTML માં ટેબલની રો (Row) બનાવવા માટે કયો ટેગ વપરાય છે?",o:["<td>","<th>","<table>","<tr>"],a:3},
+{q:"7. Which HTML tag is used to create a table row? / HTML માં ટેબલની રો (Row) બનાવવા માટે કયો ટેગ વપરાય છે?",o:["","","",""],a:3},
 {q:"8. What is the full form of SQL? / SQL નું પૂરું નામ શું છે?",o:["Structured Query Language","Simple Query Language","Standard Query Language","System Query Language"],a:0},
 {q:"9. Which function in Excel is used to find the highest value? / એક્સેલમાં સૌથી મોટી કિંમત શોધવા માટે કયું ફંક્શન વપરાય છે?",o:["HIGH","LARGE","MAX","SUM"],a:2},
 {q:"10. What is the full form of ERP? / ERP નું પૂરું નામ શું છે?",o:["Enterprise Resource Planning","Enterprise Relationship Planning","Electronic Resource Planning","Efficient Resource Planning"],a:0},
@@ -1112,7 +1085,7 @@ m12: [
 {q:"13. Which language is used for styling web pages? / વેબ પેજને સ્ટાઇલ આપવા માટે કઈ ભાષાનો ઉપયોગ થાય છે?",o:["HTML","PHP","CSS","SQL"],a:2},
 {q:"14. What is the full form of DNS? / DNS નું પૂરું નામ શું છે?",o:["Data Name System","Domain Name System","Domain Number System","Digital Name System"],a:1},
 {q:"15. Which protocol is used to transfer files over the internet? / ઇન્ટરનેટ પર ફાઇલો ટ્રાન્સફર કરવા માટે કયો પ્રોટોકોલ વપરાય છે?",o:["HTTP","FTP","SMTP","TELNET"],a:1},
-{q:"16. {q:"Which tag is used for a line break in HTML? / HTML માં નવી લાઇન (Break) માટે કયો ટેગ વપરાય છે?",o:["<lb>","<break>","<br>","<newline>"],a:2},
+{q:"16. Which tag is used for a line break in HTML? / HTML માં નવી લાઇન (Break) માટે કયો ટેગ વપરાય છે?",o:["","","",""],a:2},
 
 {q:"17. What is the full form of UPS? / UPS નું પૂરું નામ શું છે?",o:["Uninterrupted Power Supply","Universal Power Supply","Unit Power Supply","Ultra Power Supply"],a:0},
 {q:"18. Which function key is used for help in most programs? / મોટાભાગના પ્રોગ્રામ્સમાં મદદ (Help) માટે કઈ ફંક્શન કી વપરાય છે?",o:["F1","F2","F5","F10"],a:0},
@@ -1131,7 +1104,7 @@ m12: [
 {q:"31. What is the full form of OSI model? / OSI મોડેલમાં કેટલા લેયર હોય છે?",o:["5","6","7","8"],a:2},
 {q:"32. Which SQL command is used to delete all records from a table? / ટેબલમાંથી બધો ડેટા કાઢી નાખવા કયો આદેશ વપરાય છે?",o:["DELETE","REMOVE","TRUNCATE","DROP"],a:2},
 {q:"33. What is the full form of WAN? / WAN નું પૂરું નામ શું છે?",o:["Wide Area Network","World Area Network","Wireless Area Network","Web Area Network"],a:0},
-{q:"34. {q:"Which tag is used to create a numbered list in HTML? / HTML માં નંબરવાળી યાદી બનાવવા કયો ટેગ વપરાય છે?",o:["<ul>","<li>","<ol>","<dl>"],a:2},
+{q:"34. Which tag is used to create a numbered list in HTML? / HTML માં નંબરવાળી યાદી બનાવવા કયો ટેગ વપરાય છે?",o:["","","",""],a:2},
 {q:"35. What is the full form of B2B? / B2B નું પૂરું નામ શું છે?",o:["Business to Business","Buyer to Business","Business to Buyer","Business to Basic"],a:0},
 {q:"36. Which shortcut key is used to find text in a document? / ડોક્યુમેન્ટમાં શબ્દ શોધવા માટે કઈ શોર્ટકટ કી વપરાય છે?",o:["Ctrl + H","Ctrl + F","Ctrl + G","Ctrl + J"],a:1},
 {q:"37. What is the full form of RAM? / RAM કેવા પ્રકારની મેમરી છે?",o:["Permanent","Volatile","Non-volatile","Secondary"],a:1},
@@ -1141,7 +1114,7 @@ m12: [
 {q:"41. What is the full form of CC in email? / ઈમેલમાં CC નું પૂરું નામ શું છે?",o:["Carbon Copy","Creative Copy","Common Copy","Combined Copy"],a:0},
 {q:"42. Which symbol is used for ID selector in CSS? / CSS માં ID સિલેક્ટર માટે કયું પ્રતીક વપરાય છે?",o:[". (dot)","# (hash)","* (asterisk)","@ (at)"],a:1},
 {q:"43. What is the full form of HDD? / HDD નું પૂરું નામ શું છે?",o:["Hard Disk Drive","Heavy Disk Drive","High Disk Drive","Hard Data Drive"],a:0},
-{q:"44. {q:"Which tag is used to define a table header in HTML? / HTML માં ટેબલ હેડર માટે કયો ટેગ વપરાય છે?",o:["<td>","<tr>","<th>","<table>"],a:2},
+{q:"44. Which tag is used to define a table header in HTML? / HTML માં ટેબલ હેડર માટે કયો ટેગ વપરાય છે?",o:["","","",""],a:2},
 {q:"45. Which shortcut key is used to replace text in Word? / વર્ડમાં શબ્દ બદલવા (Replace) માટે કઈ શોર્ટકટ કી વપરાય છે?",o:["Ctrl + F","Ctrl + R","Ctrl + H","Ctrl + K"],a:2},
 {q:"46. What is the full form of SQL? / SQL માં 'S' નો અર્થ શું થાય છે?",o:["Simple","Standard","Structured","System"],a:2},
 {q:"47. Which key is used to delete character to the right of the cursor? / કર્સરની જમણી બાજુના અક્ષર ભૂંસવા કઈ કી વપરાય છે?",o:["Backspace","Delete","Shift","End"],a:1},
@@ -1209,7 +1182,7 @@ m14: [
 {q:"5. In which bar is the current position of the cursor shown in MS Word? / MS વર્ડમાં કર્સરની કરંટ પોઝીશન કયા બારમાં હોય છે?",o:["Status Bar","Menu Bar","Title Bar","Scroll Bar"],a:0},
 {q:"6. Which document view looks like a web browser's appearance? / કયો ડોક્યુમેન્ટ દ્રશ્ય વેબ બ્રાઉઝરના દેખાવ જેવું લાગે છે?",o:["Print Layout","Draft View","Web Layout View","Outline View"],a:2},
 {q:"7. What is the data type of 'print' (Type 0xFF)? / પ્રિન્ટરનો ડેટા પ્રકાર શું છે (Type 0xFF)?",o:["Char","String","Float","Int"],a:3},
-{q:"8. {q:"Which tag is used for audio in HTML? / HTML માં ઓડિયો માટે કયા ટેગ નો ઉપયોગ થાય છે?",o:["<sound>","<audio>","<music>","<mp3>"],a:1},
+{q:"8. Which tag is used for audio in HTML? / HTML માં ઓડિયો માટે કયા ટેગ નો ઉપયોગ થાય છે?",o:["","","",""],a:1},
 {q:"9. What is the full form of WYSIWYG? / WYSIWYG નું પૂરું નામ શું છે?",o:["What You See Is What You Get","What You Show Is What You Get","What You Send Is What You Give","Where You See Is Where You Go"],a:0},
 {q:"10. Twisted pair, Coaxial cable, and Optical fiber are examples of what? / ટ્વિસ્ટોડ જોડી વાયર, કોએક્િયલ કેબલ અને ઓપ્ટિકલ ફાઈબર શું છે?",o:["Wireless Media","Storage Media","Wired Media","Input Media"],a:2},
 {q:"11. Which of the following is a cyber crime? / સાયબર ક્રાઈમ કયો છે?",o:["Emailing","Online Chatting","Man in the Middle","Browsing"],a:2},
@@ -1302,7 +1275,7 @@ m15: [
 {q:"45. Which tool allows users to select a different layout for a slide? / કયું સાધન વપરાશકર્તાઓને સ્લાઈડ માટે અલગ લેઆઉટ પસંદ કરવાની મંજૂરી આપે છે?",o:["Slide Design","Slide Layout","Slide Sorter","Slide Show"],a:1},
 {q:"46. What is Cloud Computing? / ક્લાઉડ કમ્પ્યુટિંગ શું છે?",o:["Coding","Offline storage","Providing services like storage, servers, networking","Internet browsing"],a:2},
 {q:"47. What is required for real-time audio-video conferencing using two-way communication? / રિયલ ટાઈમ ઓડિયો વિડીયો કોન્ફરન્સિંગ માટે શું જરૂરી છે?",o:["Receivers and Senders","High speed printer","Large monitor","Scanner"],a:0},
-{q:"48. {q:"Which HTML tag makes text bold? / કયો HTML ટેગ ટેક્સ્ટને બોલ્ડ બનાવે છે?",o:["<i>","<b>","<u>","<strong>"],a:1},
+{q:"48. Which HTML tag makes text bold? / કયો HTML ટેગ ટેક્સ્ટને બોલ્ડ બનાવે છે?",o:["","","",""],a:1},
 {q:"49. Which option inserts a Pivot Table? / કયો વિકલ્પ પીવટ ટેબલ દાખલ કરે છે?",o:["Home tab","Insert tab -> Tables group","Data tab","Layout tab"],a:1},
 {q:"50. Which ribbon menu shows the Page Setup group of commands? / કયું રીબન મેનુ આદેશોનું પૃષ્ઠ સેટઅપ (Page Setup) જૂથ દર્શાવે છે?",o:["Home","Layout / Page Layout","View","Insert"],a:1}
 
@@ -1329,7 +1302,7 @@ m16: [
 {q:"17. What are Cookies? / કુકીઝ શું છે?",o:["Virus","Data stored in small text files","Hardware","Search Engine"],a:1},
 {q:"18. Statistical analysis packages have much in common with? / આંકડાકીય પૃથ્થકરણ પેકેજમાં કોની સાથે સામ્યતા હોય છે?",o:["Word Processor","Presentation","Database","Spreadsheet Packages"],a:3},
 {q:"19. What is the return type of parseFloat() method? / parseFloat() પદ્ધતિનો રીટર્ન ટાઈપ શું હોય છે?",o:["Integer","String","Boolean","Float"],a:3},
-{q:"20. {q:"Which HTML tag makes text bold? / કયો HTML ટેગ ટેક્સ્ટને બોલ્ડ બનાવે છે?",o:["<b>","<i>","<u>","<strong>"],a:0},
+{q:"20. Which HTML tag makes text bold? / કયો HTML ટેગ ટેક્સ્ટને બોલ્ડ બનાવે છે?",o:["","","",""],a:0},
 {q:"21. Which method joins all array elements into a string with a separator? / કઈ મેથડ બધા એરે એલિમેન્ટને સેપરેટર સાથે સ્ટ્રિંગમાં જોઈન કરે છે?",o:["Connect","Add","Join","Combine"],a:2},
 {q:"22. Which function counts the number of cells that contain numbers in a range? / કયું ફંક્શન શ્રેણીમાં સંખ્યાઓ ધરાવતા કોષોની સંખ્યા ગણે છે?",o:["Sum","Count","Average","Max"],a:1},
 {q:"23. How to restrict Macro from running automatically when starting Excel? / એક્સેલ શરૂ કરતી વખતે મેક્રોને આપમેળે ચાલતા કેવી રીતે રોકી શકાય?",o:["Hold Alt key","Hold Ctrl key","Hold Esc key","Hold Shift key"],a:3},
@@ -1411,7 +1384,7 @@ m17: [
 {q:"45. Which function specifies access rights for information security? / કયું કાર્ય માહિતી સુરક્ષા સંબંધિત એક્સસેસ અધિકારને સ્પષ્ટ કરે છે?",o:["Authentication","Encryption","Decryption","Authorization"],a:3},
 {q:"46. Which function returns a value inside a table? / કયું કાર્ય કોષ્ટકની અંદર મૂલ્ય આપે છે?",o:["VLOOKUP","HLOOKUP","Match","Index"],a:3},
 {q:"47. Which tool allows users to choose different layouts for slides? / કયું સાધન વપરાશકર્તાને સ્લાઈડ માટે અલગ લેઆઉટ પસંદ કરવા દે છે?",o:["Slide Design","Slide Show","Slide Transition","Slide Layout"],a:3},
-{q:"48. {q:"Which tag is used to create a Combo Box? / કોમ્બો બોક્સ બનાવવા માટે કયા ટેગનો ઉપયોગ થાય છે?",o:["<input>","<option>","<select>","<combo>"],a:2},
+{q:"48. Which tag is used to create a Combo Box? / કોમ્બો બોક્સ બનાવવા માટે કયા ટેગનો ઉપયોગ થાય છે?",o:["","","",""],a:2},
 {q:"49. Which setting is changed to print a worksheet in letterhead? / લેટર હેડમાં વર્કશીટ પ્રિન્ટ કરવા માટે શું બદલવામાં આવે છે?",o:["Font","Color","Header","Margin"],a:3},
 {q:"50. What is the use of  tag in a table? / કોષ્ટકમાં  ટેગનો ઉપયોગ શું છે?",o:["Table Title","Table Row","Table Data","Table Head"],a:2}
 
@@ -1450,13 +1423,13 @@ m18: [
 {q:"29. Which type of chart is shown in the video? / વિડિયોમાં કયા પ્રકારનો ચાર્ટ દર્શાવેલ છે?",o:["Pie Chart","Bubble Chart","Line Chart","Bar Chart"],a:1},
 {q:"30. What is the purpose of expansion slots in a motherboard? / મધરબોર્ડમાં એક્સપાન્શન સ્લોટનો હેતુ શું છે?",o:["To increase power","To cool CPU","To store data","To insert additional peripherals"],a:3},
 {q:"31. Which command stores the active document permanently? / કયો આદેશ સક્રિય ડોક્યુમેન્ટને કાયમી ધોરણે સંગ્રહિત કરે છે?",o:["Open","New","Delete","Save"],a:3},
-{q:"32. {q:"Which tag creates a checkbox in an HTML form? / HTML ફોર્મમાં કયો ટેગ ચેકબોક્સ બનાવે છે?",o:["<checkbox>","<check>","<input type='checkbox'>","<option>"],a:2},
+{q:"32. Which tag creates a checkbox in an HTML form? / HTML ફોર્મમાં કયો ટેગ ચેકબોક્સ બનાવે છે?",o:["","","",""],a:2},
 {q:"33. What is the output of 'eval(10 * 10 + 5)' in the video? / વિડિયો મુજબ 'eval(10 * 10 + 5)' નું આઉટપુટ શું હશે?",o:["1005","105 as an integer","110","150"],a:1},
 {q:"34. What is the return type of parseInt() method? / parseInt() પદ્ધતિનો રિટર્ન ટાઈપ શું છે?",o:["String","Integer","Float","Boolean"],a:1},
 {q:"35. Which shortcut key refreshes the Windows desktop? / કઈ શોર્ટકટ કી વિન્ડોઝ ડેસ્કટોપને રિફ્રેશ (Refresh) કરે છે?",o:["F1","F2","F3","F5"],a:3},
 {q:"36. How do we identify category labels in a Pie Chart? / અમે પાઈ ચાર્ટમાં કેટેગરી લેબલને કેવી રીતે ઓળખી શકીએ?",o:["Title","Legend","Gridlines","Axis"],a:1},
 {q:"37. Which data communication system spans across states or the whole world? / કઈ ડેટા કોમ્યુનિકેશન સિસ્ટમ રાજ્યો અથવા સમગ્ર વિશ્વમાં ફેલાયેલી હોય છે?",o:["LAN","PAN","MAN","WAN"],a:3},
-{q:"38. {q:"What is the syntax for adding alternate text to an image? / ઈમેજ દેખાતી ન હોય ત્યારે ઓલ્ટરનેટ ટેક્સ્ટ ઉમેરવા માટેની સાચી સિન્ટેક્સ કઈ છે?",o:["<img src='image.jpg' alt='text'>","<img alt='text'>","<image alt='text'>","None"],a:0},
+{q:"38. What is the syntax for adding alternate text to an image? / ઈમેજ દેખાતી ન હોય ત્યારે ઓલ્ટરનેટ ટેક્સ્ટ ઉમેરવા માટેની સાચી સિન્ટેક્સ કઈ છે?",o:["","","","None"],a:0},
 {q:"39. Which type of e-commerce is used for submitting tenders and applications? / ટેન્ડરો અને અરજી સબમિટ કરવા માટે કયા પ્રકારનું ઈ-કોમર્સ વપરાય છે?",o:["B2B","B2C","G2B","C2C"],a:2},
 {q:"40. Which open source software is used to upload files from client to server? / ક્લાયન્ટથી સર્વર પર ફાઈલ અપલોડ કરવા માટે કયા ઓપન સોર્સ સોફ્ટવેરનો ઉપયોગ થાય છે?",o:["FileZilla","Firefox","VLC","Notepad++"],a:0},
 {q:"41. Which item in PowerPoint includes text, graphics, charts, sound, etc.? / પાવરપોઈન્ટમાં કઈ આઈટમમાં ટેક્સ્ટ, ગ્રાફિક્સ, સાઉન્ડ વગેરેનો સમાવેશ થાય છે?",o:["Slides","Handouts","Notes","Outlines"],a:0},
@@ -1579,53 +1552,43 @@ m20: [
   {q: "50. Which DOS command removes a directory? / કયો DOS કમાન્ડ ડિરેક્ટરી કાઢી નાખે છે?", o: ["DEL", "CLS", "RD", "MD"], a: 2}
 ],
 
-    // ...
 };
 
-// Variable initialization
 let currentQuestions = [];
 let currentIndex = 0;
-let userAnswers = []; // Answers store karne ke liye array
+let score = 0;
+let isAnswered = false;
 
 function loadQuiz(topic) {
     currentQuestions = quizzes[topic];
     currentIndex = 0;
-    userAnswers = new Array(currentQuestions.length).fill(null); // Array reset karein
+    score = 0;
+    isAnswered = false;
 
     document.getElementById("topicPage").style.display = "none";
     document.getElementById("quizPage").style.display = "block";
     document.getElementById("sidebar").style.display = "flex";
-    document.getElementById("navControls").style.display = "flex";
-    document.getElementById("quizTitle").innerText = topic.toUpperCase();
+    document.getElementById("quizTitle").innerText = topic.replace(/([A-Z])/g, ' $1');
     
     showQuestion();
 }
 
 function showQuestion() {
+    isAnswered = false;
+    if (currentIndex >= currentQuestions.length) {
+        showResult();
+        return;
+    }
+
     const qData = currentQuestions[currentIndex];
     document.getElementById("qNumber").innerText = currentIndex + 1;
     
-    // Previous button visibility
-    document.getElementById("prevBtn").style.visibility = (currentIndex === 0) ? "hidden" : "visible";
-    
-    // Next button text logic
-    const nextBtn = document.getElementById("nextBtn");
-    nextBtn.innerText = (currentIndex === currentQuestions.length - 1) ? "Finish" : "Next";
-
     let optionsHTML = "";
     const letters = ["A", "B", "C", "D"];
     
     qData.o.forEach((opt, i) => {
-        let className = "option-row";
-        
-        // Agar user ne pehle hi answer de diya hai toh highlight karein
-        if (userAnswers[currentIndex] !== null) {
-            if (i === qData.a) className += " correct";
-            if (i === userAnswers[currentIndex] && i !== qData.a) className += " wrong";
-        }
-
         optionsHTML += `
-            <div class="${className}" id="row${i}" onclick="checkAnswer(${i}, ${qData.a})">
+            <div class="option-row" id="row${i}" onclick="checkAnswer(${i}, ${qData.a})">
                 <div class="option-letter">${letters[i]}</div>
                 <div class="option-text">${opt}</div>
             </div>
@@ -1643,27 +1606,24 @@ function showQuestion() {
 }
 
 function checkAnswer(selected, correct) {
-    // Agar question answered nahi hai toh answer set karein
-    if (userAnswers[currentIndex] === null) {
-        userAnswers[currentIndex] = selected;
-        showQuestion(); // UI update karein feedback dikhane ke liye
-    }
-}
+    if (isAnswered) return;
+    isAnswered = true;
 
-function nextQuestion() {
-    if (currentIndex < currentQuestions.length - 1) {
+    const rows = document.querySelectorAll('.option-row');
+    
+    if (selected === correct) {
+        rows[selected].classList.add('correct');
+        score++;
+    } else {
+        rows[selected].classList.add('wrong');
+        rows[correct].classList.add('correct'); // Sahi answer highlight karein
+    }
+
+    // Next question after 1.5 seconds
+    setTimeout(() => {
         currentIndex++;
         showQuestion();
-    } else {
-        showResult();
-    }
-}
-
-function prevQuestion() {
-    if (currentIndex > 0) {
-        currentIndex--;
-        showQuestion();
-    }
+    }, 1500);
 }
 
 function updateProgress() {
@@ -1672,17 +1632,10 @@ function updateProgress() {
 }
 
 function showResult() {
-    // Score calculate karein
-    let finalScoreCount = 0;
-    userAnswers.forEach((ans, idx) => {
-        if (ans === currentQuestions[idx].a) finalScoreCount++;
-    });
-
     document.getElementById("questionBox").style.display = "none";
-    document.getElementById("navControls").style.display = "none";
     document.getElementById("sidebar").style.display = "none";
     document.getElementById("resultArea").style.display = "block";
-    document.getElementById("finalScore").innerHTML = `Quiz Completed!<br>Score: ${finalScoreCount} / ${currentQuestions.length}`;
+    document.getElementById("finalScore").innerHTML = `Quiz Completed!<br>Score: ${score} / ${currentQuestions.length}`;
 }
 
 function goHome() {
@@ -1693,8 +1646,10 @@ function goHome() {
     document.getElementById("resultArea").style.display = "none";
 }
 
-</script>
+// Note: Purane submitQuiz function ki ab zarurat nahi hai kyunki result auto-save ho raha hai.
 
+</script>
+ 
 <div class="footer">
     MADE BY - SAVAN CHAUHAN<br> ITI Tarapur </br>
 </div>                      
